@@ -3,7 +3,7 @@ let users = [
     {
         id: '1',
         username: 'apple',
-        password: '1111',
+        password: '$2b$10$lXJEihhFxQ6f7O.myu5wmeTrPYS/hj5YF8SUKzTmCIWf5vQaHUCl6',  // abcd1234
         name: '김사과',
         email: 'apple@apple.com',
         url: 'https://cdn.pointe.co.kr/news/photo/202110/4299_11148_437.jpg'
