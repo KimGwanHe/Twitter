@@ -22,7 +22,7 @@ export async function getTweet(req, res, next) {
 // 트윗을 생성하는 함수
 export async function createTweet(req, res, next) {
     const {text, name, username} = req.body;
-    body('text').trim().isLength({min:3}).withMessage('텍스트는 세글자 이상으로 입력!')
+    // body('text').trim().isLength({min:3}).withMessage('텍스트는 세글자 이상으로 입력!')
     const tweet = await tweetRepository.create(text, name, username);
     res.status(201).json(tweet);
 };
@@ -43,5 +43,5 @@ export async function updateTweet(req, res, next) {
 export async function deleteTweet(req, res, next) {
     const id = req.params.id;
     await tweetRepository.remove(id);
-    req.sendStatus(204);
+    res.sendStatus(204);
 }
