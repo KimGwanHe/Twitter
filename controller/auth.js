@@ -23,8 +23,8 @@ export async function signup(req, res, next) {
     if(found){
         return res.status(409).json({message:`${username}이 이미 있습니다.`});
     }
-    const hashed = await bcrypt.hash(password, config.bcrypt.SaltRounds);
-    const userId = await authRepository.createUser(username, hashed, name, email, url);
+    const hashed = await bcrypt.hash(password, config.bcrypt.saltRounds);
+    const userId = await authRepository.createUser({username, hashed, name, email, url});
     const token = createJwtToken(userId);
     res.status(201).json({token, username});
 }
